@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARASAKA_MONITOR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_modified.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="frame">
+            <div class="header">
+                <h1>ARASAKA_MONITOR</h1>
+            </div>
+
+            <div class="section status">
+                <h2>SECURITY_STATUS</h2>
+                <div id="security-status" class="status-indicator danger">
+                    위험
+                </div>
+            </div>
+
+            <div class="section rssi-status">
+                <h2>SIGNAL_STRENGTH</h2>
+                <div id="rssi-indicator" class="status-indicator">
+                    신호 강도 측정 중...
+                </div>
+            </div>
+
+            <div class="section buzzer-control">
+                <h2>ALARM</h2>
+                <button id="buzzer-toggle">ACTIVATION</button>
+            </div>
+
+            <div class="section location">
+                <h2>FIND_DEVICE</h2>
+                <button id="finding-mode" onclick="toggleFindingMode()">FINDING MODE [OFF]</button>
+            </div>
+
+            <div class="section event-log">
+                <h2>최근 이벤트 로그</h2>
+                <ul>
+                    <li>2024-11-01 12:30 - 부저 활성화</li>
+                    <li>2024-11-01 11:20 - 침입 감지</li>
+                    <li>2024-11-01 10:10 - 시스템 재설정</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="frame">
+            <div class="section map">
+                <h2>현재 위치</h2>
+                <div id="map">지도 로드 중...</div>
+            </div>
+
+            <div class="section status">
+                <h2>도난 경보</h2>
+                <div id="theft-status" class="status-indicator warning">
+                    도난 감지됨
+                </div>
+            </div>
+        </div>
+
+        <div class="frame">
+            <div class="section event-log">
+                <h2>이벤트 로그</h2>
+                <ul>
+                    <li>2024-11-01 12:30 - 부저 활성화</li>
+                    <li>2024-11-01 11:20 - 침입 감지</li>
+                    <li>2024-11-01 10:10 - 시스템 재설정</li>
+                    <li>2024-10-31 16:50 - 접근 경고</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script_modified.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFp4tg3CxavnM2SREPBNXSZ3x35tzsDp0&callback=initMap" async defer></script>
+</body>
+</html>
