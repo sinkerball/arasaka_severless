@@ -112,10 +112,10 @@ function updateBuzzerPattern(level) {
 // 지도 초기화
 function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: { lat: 37.5665, lng: 126.9780 }  // 서울 좌표
+        zoom: 17,
+        center: { lat: 36.7141, lng: 127.4328 }  // 서울 좌표
     });
-    updateDeviceLocation(map);
+    
 }
 
 // 위치 찾기
