@@ -151,7 +151,7 @@ function updateBuzzerPattern(level) {
 
 // 지도 초기화
 function initMap() {
-  const location = { lat: 36.706562770571, lng: 127.431078519616 };  
+  const location = { lat: 36.70752755070448, lng: 127.42867131969989 };  
   
   const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 18,
