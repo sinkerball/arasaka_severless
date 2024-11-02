@@ -111,11 +111,21 @@ function updateBuzzerPattern(level) {
 
 // 지도 초기화
 function initMap() {
+    const location = { lat: 36.7141, lng: 127.4328 };  // NH농협은행 위치
+    
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 17,
-        center: { lat: 36.7141, lng: 127.4328 }  // 서울 좌표
+        center: location
     });
     
+    // 마커(핀) 추가
+    new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "ICT디바이스랩충북"  // 마커에 마우스를 올렸을 때 표시될 텍스트
+    });
+    
+    // updateDeviceLocation 함수는 제거
 }
 
 // 위치 찾기
