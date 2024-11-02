@@ -111,7 +111,7 @@ function updateBuzzerPattern(level) {
 
 // 지도 초기화
 function initMap() {
-    const location = { lat: 36.628875, lng: 127.454235 };  // 충북과학기술혁신원 2관 위치
+    const location = { lat: 36.706562770571, lng: 127.431078519616 };  // 충북과학기술혁신원 2관 위치
     
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 18,  // 더 자세히 보이도록 zoom 레벨 증가
