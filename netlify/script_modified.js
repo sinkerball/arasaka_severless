@@ -74,13 +74,24 @@ function updateSecurityStatus() {
         });
 }
 
-// 부저 제어
 document.getElementById('buzzer-toggle').addEventListener('click', function() {
     if (this.textContent === 'ACTIVATION') {
-        fetch(`${NETLIFY_FUNCTION_URL}/buzzer/on`);
+        fetch(NETLIFY_FUNCTION_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ buzzer: true })
+        });
         this.textContent = 'DEACTIVATION';
     } else {
-        fetch(`${NETLIFY_FUNCTION_URL}/buzzer/off`);
+        fetch(NETLIFY_FUNCTION_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ buzzer: false })
+        });
         this.textContent = 'ACTIVATION';
     }
     this.style.backgroundColor = (this.textContent === 'ACTIVATION') ? '#ff2e2e' : '#d40000';
