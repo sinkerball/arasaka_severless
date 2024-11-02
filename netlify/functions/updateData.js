@@ -1,5 +1,3 @@
-// updateData.js
-
 // 메모리에 최신 데이터 저장
 let latestData = {
     status: "정상",
@@ -39,14 +37,16 @@ exports.handler = async (event, context) => {
             };
 
             console.log("Updated data:", latestData);
-
+            
             return {
                 statusCode: 200,
                 headers,
-                body: JSON.stringify({
-                    message: "Data received",
+                body: JSON.stringify({ 
+                    message: "Data received", 
                     data: latestData,
-                    buzzer: latestData.buzzer // ESP32로 부저 상태 반환
+                    buzzer: latestData.buzzer, // ESP32로 부저 상태 반환
+                    status: latestData.status,
+                    rssi: latestData.rssi
                 })
             };
         }
@@ -57,7 +57,6 @@ exports.handler = async (event, context) => {
             headers,
             body: JSON.stringify({ message: "Method not allowed" })
         };
-
     } catch (error) {
         console.error("Error processing request:", error);
         return {
