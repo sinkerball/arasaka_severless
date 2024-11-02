@@ -111,10 +111,10 @@ function updateBuzzerPattern(level) {
 
 // 지도 초기화
 function initMap() {
-    const location = { lat: 36.7141, lng: 127.4328 };  // NH농협은행 위치
+    const location = { lat: 36.628875, lng: 127.454235 };  // 충북과학기술혁신원 2관 위치
     
     const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 17,
+        zoom: 18,  // 더 자세히 보이도록 zoom 레벨 증가
         center: location
     });
     
@@ -122,10 +122,8 @@ function initMap() {
     new google.maps.Marker({
         position: location,
         map: map,
-        title: "ICT디바이스랩충북"  // 마커에 마우스를 올렸을 때 표시될 텍스트
+        title: "(재단)충북과학기술혁신원 2관"  // 마커에 마우스를 올렸을 때 표시될 텍스트
     });
-    
-    // updateDeviceLocation 함수는 제거
 }
 
 // 위치 찾기
