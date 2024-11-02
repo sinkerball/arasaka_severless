@@ -76,18 +76,23 @@ function updateSecurityStatus() {
 
 // ALARM 버튼 제어 (수정된 부분)
 document.getElementById('buzzer-toggle').addEventListener('click', function() {
-   if (this.textContent === 'ACTIVATION') {
-       fetch(NETLIFY_FUNCTION_URL, {
-           method: 'POST',
-           headers: {
-               'Content-Type': 'application/json'
-           },
-           body: JSON.stringify({ 
-               buzzer: true,
-               mode: 'alarm'  // 모드 구분 추가
-           })
-       });
-       this.textContent = 'DEACTIVATION';
+    if (this.textContent === 'ACTIVATION') {
+        // Finding Mode가 켜져있으면 끄기
+        if(isFindingMode) {
+            const findingButton = document.getElementById('finding-mode');
+            findingButton.click();  // Finding Mode 끄기
+        }
+        fetch(NETLIFY_FUNCTION_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ 
+                buzzer: true,
+                mode: 'alarm'
+            })
+        });
+        this.textContent = 'DEACTIVATION';
    } else {
        fetch(NETLIFY_FUNCTION_URL, {
            method: 'POST',
