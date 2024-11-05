@@ -1,6 +1,6 @@
 // API 설정
-const GEOLOCATION_API_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=3217189ed56e4f21a2f1c3492c7ffcaa`;
-const NETLIFY_FUNCTION_URL = "https://arasakakr.netlify.app/.netlify/functions/updateData";
+const GEOLOCATION_API_URL = `#api키를 발급받아서 넣으세요`;
+const NETLIFY_FUNCTION_URL = "https://???????.netlify.app/.netlify/functions/updateData";
 
 // 전역 변수
 let isFindingMode = false;
